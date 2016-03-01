@@ -180,7 +180,12 @@ function VTTParser() {
             if (!lineData.match(regExToken))
                 subline = lineData;
         }
-        return decodeURI(subline);
+
+        try {
+            return decodeURI(subline);
+        } catch (e) {
+            return subline;
+        }
     }
 
     instance = {
