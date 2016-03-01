@@ -144,7 +144,7 @@ function ProtectionModel_21Jan2015(config) {
         // Replacing the previous element
         if (videoElement) {
             videoElement.removeEventListener('encrypted', eventHandler);
-            videoElement.setMediaKeys(null);
+            // videoElement.setMediaKeys(null);
         }
 
         videoElement = mediaElement;
