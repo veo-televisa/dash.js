@@ -47,5 +47,6 @@
     "url": "https://github.com/Dash-Industry-Forum/dash.js.git"
   },
   "author": "Dash Industry Forum",
-  "license": "BSD-3-Clause"
+  "license": "BSD-3-Clause",
+  "browserify": { "transform": [ "babelify" ] }
 }
