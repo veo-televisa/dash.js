@@ -64,12 +64,12 @@ function ProtectionKeyController() {
 
         var keySystem;
 
-        // PlayReady
-        keySystem = KeySystemPlayReady(context).getInstance();
-        keySystems.push(keySystem);
-
         // Widevine
         keySystem = KeySystemWidevine(context).getInstance();
+        keySystems.push(keySystem);
+
+        // PlayReady
+        keySystem = KeySystemPlayReady(context).getInstance();
         keySystems.push(keySystem);
 
         // ClearKey
