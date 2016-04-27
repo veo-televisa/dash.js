@@ -3,6 +3,8 @@
 
 Travis CI Status: [![Travis CI Status](http://img.shields.io/travis/Dash-Industry-Forum/dash.js/development.svg?style=flat-square)](https://travis-ci.org/Dash-Industry-Forum/dash.js)
 
+Join the discussion: [![Slack Status](https://dashif-slack.azurewebsites.net/badge.svg)](https://dashif-slack.azurewebsites.net)
+
 ## Overview
 A reference client implementation for the playback of MPEG DASH via JavaScript and [compliant browsers](http://caniuse.com/#feat=mediasource). Learn more about DASH IF Reference Client on our [wiki](https://github.com/Dash-Industry-Forum/dash.js/wiki).
 
@@ -13,12 +15,18 @@ If your goal is to improve or extend the code and contribute back to this projec
 All new work should be in the development branch. Master is now reserved for tagged builds.
 
 ## Documentation
-Before you get started, please read the Dash.js v2.0 Migration Document found [here](https://github.com/Dash-Industry-Forum/dash.js/wiki/Migration-2.0)
+Before you get started, please read the Dash.js v2.0 [Migration Document](https://github.com/Dash-Industry-Forum/dash.js/wiki/Migration-2.0).
 
-Full [API Documentation ](http://cdn.dashjs.org/latest/jsdocs/index.html) is available describing all public methods, interfaces, properties, and events.
+Full [API Documentation ](http://cdn.dashjs.org/latest/jsdoc/index.html) is available describing all public methods, interfaces, properties, and events.
 
-For help, join our [email list](https://groups.google.com/d/forum/dashjs) and read our [wiki](https://github.com/Dash-Industry-Forum/dash.js/wiki).
+For help, join our [Slack channel](https://dashif-slack.azurewebsites.net), our [email list](https://groups.google.com/d/forum/dashjs) and read our [wiki](https://github.com/Dash-Industry-Forum/dash.js/wiki).
 
+## Reference players
+The released [pre-built reference players](http://dashif.org/reference/players/javascript/index.html) are publicly accessible if you want direct access without writing any Javascript. 
+
+The [nightly build of the /dev branch reference player](http://dashif.org/reference/players/javascript/nightly/dash.js/samples/dash-if-reference-player/index.html), is pre-release but contains the latest fixes. It is a good place to start if you are debugging playback problems. 
+
+A nightly build of the latest minified files are also available: [dash.all.min.js](http://dashif.org/reference/players/javascript/nightly/dash.js/dist/dash.all.min.js) and its debug version  [dash.all.debug.js](http://dashif.org/reference/players/javascript/nightly/dash.js/dist/dash.all.debug.js).
 
 ## Quick Start for Users
 If you just want a DASH player to use and don't need to see the code or commit to this project, then follow the instructions below. If you are a developer and want to work with this code base, then skip down to the "Quick Start for Developers" section.
@@ -26,6 +34,13 @@ If you just want a DASH player to use and don't need to see the code or commit t
 Put the following code in your web page
 ```
 <script src="http://cdn.dashjs.org/latest/dash.all.min.js"></script>
+...
+<style>
+    video {
+       width: 640px;
+       height: 360px;
+    }
+</style>
 ...
 <body>
    <div>
@@ -81,7 +96,7 @@ Add dash.all.min.js to the end of the body.
 Now comes the good stuff. We need to create a MediaPlayer and initialize it.  
 ``` js
 
-var url = "http://dash.edgesuite.net/envivio/Envivio-dash2/manifest.mpd";
+var url = "http://dash.edgesuite.net/envivio/EnvivioDash3/manifest.mpd";
 var player = dashjs.MediaPlayer().create();
 player.initialize(document.querySelector("#videoPlayer"), url, true);
 
@@ -93,6 +108,12 @@ When it is all done, it should look similar to this:
 <html>
     <head>
         <title>Dash.js Rocks</title>
+        <style>
+            video {
+                width: 640px;
+                height: 360px;
+            }
+        </style>
     </head>
     <body>
         <div>
@@ -101,7 +122,7 @@ When it is all done, it should look similar to this:
         <script src="yourPathToDash/dash.all.min.js"></script>
         <script>
             (function(){
-                var url = "http://dash.edgesuite.net/envivio/Envivio-dash2/manifest.mpd";
+                var url = "http://dash.edgesuite.net/envivio/EnvivioDash3/manifest.mpd";
                 var player = dashjs.MediaPlayer().create();
                 player.initialize(document.querySelector("#videoPlayer"), url, true);
             })();
@@ -109,6 +130,11 @@ When it is all done, it should look similar to this:
     </body>
 </html>
 ```
+
+### Module Setup
+
+We publish dash.js to [npm](https://www.npmjs.com/package/dashjs). Examples of how to use dash.js in different module
+bundlers can be found in the [`samples/modules`](https://github.com/Dash-Industry-Forum/dash.js/tree/development/samples/modules) directory.
 
 ### MediaPlayerFactory Setup
 
@@ -135,6 +161,12 @@ When it is all done, it should look similar to this:
 <html>
     <head>
         <title>Dash.js Rocks</title>
+        <style>
+            video {
+                width: 640px;
+                height: 360px;
+            }
+        </style>
     </head>
     <body>
         <div>
