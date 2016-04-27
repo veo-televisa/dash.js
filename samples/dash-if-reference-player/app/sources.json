@@ -4,7 +4,16 @@
           "name": "BLIM",
           "submenu": [
             {
-              "url":"http://video.veo.tv/PAID0000000000645242/dash/91760_c89b0991748834e0dd4f22b8df11c3a0/mpds/91760.mpd?cb=145211022",
+                "name":"Live Stream",
+                "url":"http://edge.televisa-veo-live.top.comcast.net/out/u/televisa-estrellas-replay.mpd",
+                "protData":{
+                    "com.widevine.alpha":{
+                        "serverURL":"https://widevine-dash.ezdrm.com/proxy?pX=062C0D"
+                    }
+                }
+            },
+            {
+              "url":"http://video.blim.com/PAID0000000000645242/dash/91760_c89b0991748834e0dd4f22b8df11c3a0/mpds/91760.mpd?cb=145211022",
               "name": "Ace Ventura: Pet Detective",
               "protData":{
                   "com.widevine.alpha":{
@@ -13,7 +22,7 @@
               }
             },
             {
-              "url":"http://video.veo.tv/PAID0000000000742391/dash/101761_7ce35bff53538519bf56538a2754b403/mpds/101761.mpd?cb=145249721",
+              "url":"http://video.blim.com/PAID0000000000742391/dash/101761_7ce35bff53538519bf56538a2754b403/mpds/101761.mpd?cb=145249721",
               "name": "Transformers 2 [HD]",
               "protData":{
                   "com.widevine.alpha":{
